@@ -24,7 +24,7 @@ function getHumanChoice() {
             return "scissors";
         default:
             // practice in error handling
-            throw "Invalid choice";
+            return "Invalid choice";
     }
 }
 
@@ -88,10 +88,8 @@ function playGame() {
     let numberOfRounds = 5;
     for (let i = 0; i < numberOfRounds; i++) {
         let humanSelection;
-        try {
-            humanSelection = getHumanChoice();
-        }
-        catch (err) {
+        humanSelection = getHumanChoice();
+        if (humanSelection === "Invalid choice") {
             console.log("Invalid choice, please try again.");
             i--;
             continue;
@@ -113,3 +111,8 @@ function playGame() {
         console.log("You lose!");
     }
 }
+
+const button = document.querySelector("#btn");
+button.addEventListener("click", () => {
+    playGame();
+});
