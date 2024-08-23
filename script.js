@@ -101,7 +101,7 @@ function playGame() {
         playRound(humanSelection, computerSelection);
         console.log(`Your Score: ${humanScore}\nComputer Score: ${computerScore}\n`);
     }
-    console.log("\n");
+    console.log('\n');
     if (humanScore === computerScore) {
         // Since tie rounds do not reset (this game is not best of 5, but rather just 5 rounds), this is very much possible
         console.log("Woah! You guys tied!");
@@ -113,5 +113,3 @@ function playGame() {
         console.log("You lose!");
     }
 }
-
-playGame();
